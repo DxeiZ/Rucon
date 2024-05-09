@@ -9,10 +9,10 @@ namespace Rucon
     public partial class SettingsForm : Form
     {
         #region WinAPI Functions
-        [DllImport("dwmapi.dll", CharSet = CharSet.Unicode, PreserveSig = false)]
-        internal static extern void DwmSetWindowAttribute(IntPtr hwnd,
+        [DllImport("dwmapi.dll", EntryPoint = "DwmSetWindowAttribute")]
+        public static extern void DwmSetWindowAttribute(IntPtr hwnd,
             DWMWINDOWATTRIBUTE attribute,
-            ref DWM_WINDOW_CORNER_PREFERENCE pvAttribute,
+            DWM_WINDOW_CORNER_PREFERENCE pvAttribute,
             uint cbAttribute);
 
         public enum DWMWINDOWATTRIBUTE
@@ -38,10 +38,23 @@ namespace Rucon
         }
         #endregion
         #region Context Menu
-        private int meni;
-        private void meniHide() { Hide(); meni += 1; if (meni == 1) new MenuForm().Show(); }
-        private void siticoneGradientButton1_Click(object sender, EventArgs e) { Properties.Settings.Default.Save(); meniHide(); }
-        private void siticoneGradientButton3_Click(object sender, EventArgs e) => meniHide();
+        private bool isMenuVisible = false;
+
+        private void ToggleMenuVisibility()
+        {
+            Hide();
+            if (!isMenuVisible)
+            {
+                new MenuForm().Show();
+                isMenuVisible = true;
+            }
+        }
+
+        private void siticoneGradientButton1_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Save();
+            ToggleMenuVisibility();
+        }
         private void stgsStripMenuItem_Click(object sender, EventArgs e) => Show();
         private void clseStripMenuItem_Click(object sender, EventArgs e) => Application.Exit();
         private void siticoneGradientButton2_Click(object sender, EventArgs e)
@@ -50,10 +63,10 @@ namespace Rucon
             checkedListBox1.Items.Clear();
             checkedListBox2.Items.Clear();
             checkedListBox3.Items.Clear();
-
             siticonePictureBox1.Visible = siticonePictureBox2.Visible = siticonePictureBox3.Visible = true;
             checkedListBox1.Enabled = checkedListBox2.Enabled = checkedListBox3.Enabled = false;
         }
+
         #endregion
         #region Cyber Interface
         private List<string> cyberNames = new List<string>();
@@ -218,62 +231,54 @@ namespace Rucon
         #region User Interface
         private List<string> usrNames = new List<string>();
         private List<bool> usrChecks = new List<bool>();
+
         private void LoadUsr()
         {
             usrNames.Clear();
             usrChecks.Clear();
-            if (Properties.Settings.Default.usrAppList != null && Properties.Settings.Default.usrAppCheck != null)
+
+            var usrAppList = Properties.Settings.Default.usrAppList;
+            var usrAppCheck = Properties.Settings.Default.usrAppCheck;
+
+            if (usrAppList != null && usrAppCheck != null)
             {
-                for (int i = 0; i < Properties.Settings.Default.usrAppList.Count; i++)
+                for (int i = 0; i < usrAppList.Count; i++)
                 {
-                    string appPath = Properties.Settings.Default.usrAppList[i];
+                    string appPath = usrAppList[i];
                     string appName = Path.GetFileNameWithoutExtension(appPath);
 
                     bool isChecked = false;
-                    if (Properties.Settings.Default.usrAppCheck.Count > i && Properties.Settings.Default.usrAppCheck[i] != null)
+                    if (i < usrAppCheck.Count && bool.TryParse(usrAppCheck[i], out isChecked))
                     {
-                        bool.TryParse(Properties.Settings.Default.usrAppCheck[i], out isChecked);
+                        usrNames.Add(appName);
+                        usrChecks.Add(isChecked);
+                        checkedListBox3.Items.Add(appName, isChecked);
                     }
-
-                    usrNames.Add(appName);
-                    usrChecks.Add(isChecked);
-
-                    checkedListBox3.Items.Add(appName, isChecked);
 
                     siticonePictureBox3.Visible = false;
                     checkedListBox3.Enabled = true;
                 }
             }
         }
+
         private void checkedListBox3_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             if (e.Index >= 0 && e.Index < usrChecks.Count)
             {
                 usrChecks[e.Index] = e.NewValue == CheckState.Checked;
-
                 Properties.Settings.Default.usrAppCheck[e.Index] = usrChecks[e.Index].ToString();
             }
         }
+
         private void usrAppBtn_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-
             openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             openFileDialog.Filter = "Uygulama Dosyaları (*.exe)|*.exe";
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string fileName = Path.GetFileNameWithoutExtension(openFileDialog.FileName);
-
-                if (Properties.Settings.Default.usrAppList == null)
-                {
-                    Properties.Settings.Default.usrAppList = new System.Collections.Specialized.StringCollection();
-                }
-
-                if (Properties.Settings.Default.usrAppCheck == null)
-                {
-                    Properties.Settings.Default.usrAppCheck = new System.Collections.Specialized.StringCollection();
-                }
 
                 if (!usrNames.Contains(fileName))
                 {
@@ -284,15 +289,15 @@ namespace Rucon
                     Properties.Settings.Default.usrAppCheck.Add("True");
 
                     checkedListBox3.Items.Add(fileName, true);
-
-                    siticonePictureBox3.Visible = false;
-                    checkedListBox3.Enabled = true;
                 }
                 else
                 {
                     MessageBox.Show("Bu uygulama zaten listede var!");
                 }
             }
+
+            siticonePictureBox3.Visible = false;
+            checkedListBox3.Enabled = true;
         }
         #endregion
     }

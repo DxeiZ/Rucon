@@ -118,7 +118,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Frame 1.png" />
+    <None Include="Resources\background.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\empty.png" />
@@ -135,13 +135,19 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Groaup 3.png" />
+    <None Include="Resources\cyber.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Group l3.png" />
+    <None Include="Resources\developer.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Group 3l.png" />
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rucon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drk_rucon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -44,7 +44,6 @@
             this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
             this.siticoneGradientButton1 = new ns1.SiticoneGradientButton();
             this.siticoneGradientButton2 = new ns1.SiticoneGradientButton();
-            this.siticoneGradientButton3 = new ns1.SiticoneGradientButton();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -287,9 +286,9 @@
             this.siticoneGradientButton1.Name = "siticoneGradientButton1";
             this.siticoneGradientButton1.PressedDepth = 1;
             this.siticoneGradientButton1.ShadowDecoration.Parent = this.siticoneGradientButton1;
-            this.siticoneGradientButton1.Size = new System.Drawing.Size(520, 44);
+            this.siticoneGradientButton1.Size = new System.Drawing.Size(671, 44);
             this.siticoneGradientButton1.TabIndex = 7;
-            this.siticoneGradientButton1.Text = "KAYDET & KAPAT";
+            this.siticoneGradientButton1.Text = "KAPAT";
             this.siticoneGradientButton1.Click += new System.EventHandler(this.siticoneGradientButton1_Click);
             // 
             // siticoneGradientButton2
@@ -308,7 +307,7 @@
             this.siticoneGradientButton2.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(31)))));
             this.siticoneGradientButton2.HoveredState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
             this.siticoneGradientButton2.HoveredState.Parent = this.siticoneGradientButton2;
-            this.siticoneGradientButton2.Location = new System.Drawing.Point(538, 459);
+            this.siticoneGradientButton2.Location = new System.Drawing.Point(689, 459);
             this.siticoneGradientButton2.Name = "siticoneGradientButton2";
             this.siticoneGradientButton2.PressedDepth = 1;
             this.siticoneGradientButton2.ShadowDecoration.Parent = this.siticoneGradientButton2;
@@ -316,31 +315,6 @@
             this.siticoneGradientButton2.TabIndex = 8;
             this.siticoneGradientButton2.Text = "SIFIRLA";
             this.siticoneGradientButton2.Click += new System.EventHandler(this.siticoneGradientButton2_Click);
-            // 
-            // siticoneGradientButton3
-            // 
-            this.siticoneGradientButton3.BackColor = System.Drawing.Color.Transparent;
-            this.siticoneGradientButton3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(31)))));
-            this.siticoneGradientButton3.BorderRadius = 4;
-            this.siticoneGradientButton3.BorderThickness = 1;
-            this.siticoneGradientButton3.CheckedState.Parent = this.siticoneGradientButton3;
-            this.siticoneGradientButton3.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(165)))), ((int)(((byte)(165)))));
-            this.siticoneGradientButton3.CustomImages.Parent = this.siticoneGradientButton3;
-            this.siticoneGradientButton3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
-            this.siticoneGradientButton3.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(31)))));
-            this.siticoneGradientButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.siticoneGradientButton3.ForeColor = System.Drawing.Color.Silver;
-            this.siticoneGradientButton3.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(31)))));
-            this.siticoneGradientButton3.HoveredState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
-            this.siticoneGradientButton3.HoveredState.Parent = this.siticoneGradientButton3;
-            this.siticoneGradientButton3.Location = new System.Drawing.Point(689, 459);
-            this.siticoneGradientButton3.Name = "siticoneGradientButton3";
-            this.siticoneGradientButton3.PressedDepth = 1;
-            this.siticoneGradientButton3.ShadowDecoration.Parent = this.siticoneGradientButton3;
-            this.siticoneGradientButton3.Size = new System.Drawing.Size(145, 44);
-            this.siticoneGradientButton3.TabIndex = 9;
-            this.siticoneGradientButton3.Text = "KAPAT";
-            this.siticoneGradientButton3.Click += new System.EventHandler(this.siticoneGradientButton3_Click);
             // 
             // notifyIcon1
             // 
@@ -360,32 +334,32 @@
             this.toolStripMenuItem3});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(114, 88);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(185, 110);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Enabled = false;
-            this.toolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem2.Image")));
+            this.toolStripMenuItem2.Image = global::Rucon.Properties.Resources.drk_rucon;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(113, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(184, 26);
             this.toolStripMenuItem2.Text = "Rucon";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(110, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(181, 6);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(113, 26);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(184, 26);
             this.toolStripMenuItem1.Text = "Ayarlar";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.stgsStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(113, 26);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(184, 26);
             this.toolStripMenuItem3.Text = "Kapat";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.clseStripMenuItem_Click);
             // 
@@ -394,10 +368,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
-            this.BackgroundImage = global::Rucon.Properties.Resources.background;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(845, 515);
-            this.Controls.Add(this.siticoneGradientButton3);
             this.Controls.Add(this.siticoneGradientButton2);
             this.Controls.Add(this.siticoneGradientButton1);
             this.Controls.Add(this.siticoneGroupBox3);
@@ -437,7 +410,6 @@
         private System.Windows.Forms.CheckedListBox checkedListBox3;
         private ns1.SiticoneGradientButton siticoneGradientButton1;
         private ns1.SiticoneGradientButton siticoneGradientButton2;
-        private ns1.SiticoneGradientButton siticoneGradientButton3;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;

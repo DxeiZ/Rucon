@@ -30,6 +30,7 @@ namespace Rucon
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuForm));
             this.siticonePictureBox3 = new ns1.SiticonePictureBox();
             this.siticonePictureBox2 = new ns1.SiticonePictureBox();
             this.siticonePictureBox1 = new ns1.SiticonePictureBox();
@@ -41,7 +42,7 @@ namespace Rucon
             // siticonePictureBox3
             // 
             this.siticonePictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.siticonePictureBox3.BackgroundImage = global::Rucon.Properties.Resources.user;
+            this.siticonePictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("siticonePictureBox3.BackgroundImage")));
             this.siticonePictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.siticonePictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.siticonePictureBox3.Location = new System.Drawing.Point(186, 12);
@@ -56,7 +57,7 @@ namespace Rucon
             // siticonePictureBox2
             // 
             this.siticonePictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.siticonePictureBox2.BackgroundImage = global::Rucon.Properties.Resources.developer;
+            this.siticonePictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("siticonePictureBox2.BackgroundImage")));
             this.siticonePictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.siticonePictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.siticonePictureBox2.Location = new System.Drawing.Point(99, 12);
@@ -71,7 +72,7 @@ namespace Rucon
             // siticonePictureBox1
             // 
             this.siticonePictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.siticonePictureBox1.BackgroundImage = global::Rucon.Properties.Resources.cyber;
+            this.siticonePictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("siticonePictureBox1.BackgroundImage")));
             this.siticonePictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.siticonePictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.siticonePictureBox1.Location = new System.Drawing.Point(12, 12);
@@ -94,6 +95,7 @@ namespace Rucon
             this.Controls.Add(this.siticonePictureBox2);
             this.Controls.Add(this.siticonePictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MenuForm";
